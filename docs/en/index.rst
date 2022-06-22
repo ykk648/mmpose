@@ -43,8 +43,9 @@ You can change the documentation language at the lower-left corner of the page.
    topics/body(3d,mesh,sview,img).md
    topics/face.md
    topics/fashion.md
-   topics/hand(2d).md
-   topics/hand(3d).md
+   topics/hand(2d,kpt,rgb,img).md
+   topics/hand(3d,kpt,rgb,img).md
+   topics/hand(gesture,rgbd,vid).md
    topics/wholebody.md
 
 .. toctree::
@@ -67,6 +68,7 @@ You can change the documentation language at the lower-left corner of the page.
    tutorials/4_new_modules.md
    tutorials/5_export_model.md
    tutorials/6_customize_runtime.md
+   tutorials/7_webcam_api.md
 
 .. toctree::
    :maxdepth: 2
