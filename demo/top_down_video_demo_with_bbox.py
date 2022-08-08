@@ -28,7 +28,7 @@ def main():
     parser.add_argument('bbox_file', )
     parser.add_argument('pose_config', help='Config file for pose')
     parser.add_argument('pose_checkpoint', help='Checkpoint file for pose')
-    parser.add_argument('video-path', type=str, help='Video path')
+    parser.add_argument('video_path', type=str, help='Video path')
     parser.add_argument(
         '--show',
         action='store_true',
@@ -150,7 +150,7 @@ def main():
         # # keep the person class bounding boxes.
         # person_results = process_mmdet_results(mmdet_results, args.det_cat_id)
 
-        # # for hand bbox input pkl
+        # #  deprecated
         # person_results = []
         # for bbox in person_results_list[count]:
         #     person = {}
@@ -158,7 +158,8 @@ def main():
         #     person_results.append(person)
 
         # for body box input pkl
-        person_results = [person_results_list[count]]
+        person_results = person_results_list[count]
+        # print(person_results)
 
         count += 1
         # print(person_results)
@@ -203,8 +204,8 @@ def main():
         if args.show and cv2.waitKey(1) & 0xFF == ord('q'):
             break
 
-    # CVFile(args.video_path.replace('.mp4', '_hand_kp.pkl')).pickle_write(hand_kp_list)
-    CVFile(args.video_path.replace('.mp4', '_whole_body_halpe_kp.pkl')).pickle_write(hand_kp_list)
+    CVFile(args.video_path.replace('.mp4', '_hand_kp.pkl')).pickle_write(hand_kp_list)
+    # CVFile(args.video_path.replace('.mp4', '_whole_body_halpe_kp.pkl')).pickle_write(hand_kp_list)
 
     if save_out_video:
         videoWriter.release()
