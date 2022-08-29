@@ -109,6 +109,8 @@ venv.bak/
 mmpose/.mim
 /models
 /data
+/vis_results
+/cache
 .vscode
 .idea
 *.pkl
